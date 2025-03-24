@@ -1,0 +1,458 @@
+/* Základní stylování */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: sans-serif;
+  background-color: #fffcfc;
+  color: #121212;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navigace */
+.custom-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: 1000;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: opacity 0.8s ease;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-container {
+  background-color: transparent;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fffcfc;
+  font-weight: bold;
+  font-size: 1.5rem;
+  gap: 1rem;
+}
+
+.logo-navbar {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fffcfc;
+  font-size: 1.5rem;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Parallax sekce */
+.parallax-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #121212; /* černá barva pozadí pod vrstvami */
+}
+
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  height: 60vh; /* zmenšeno, aby kopce nebyly tak vysoké */
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom;
+  will-change: transform;
+}
+
+#hill-white {
+  z-index: 7;
+  background-image: url("hill-white.svg");
+  bottom: 0;
+  bottom: 0vh;
+}
+
+#hill-left-1 {
+  z-index: 6;
+  background-image: url("hill-left-1.svg");
+  bottom: 0;
+  bottom: -13vh;
+}
+
+#hill-right-1 {
+  z-index: 5;
+  background-image: url("hill-right-1.svg");
+  bottom: 0;
+  bottom: -5vh;
+}
+
+#hill-left-2 {
+  z-index: 4;
+  background-image: url("hill-left-2.svg");
+  bottom: 0;
+  background-position: left bottom;
+}
+
+#hill-right-2 {
+  z-index: 3;
+  background-image: url("hill-right-2.svg");
+  bottom: 0;
+  background-position: right bottom;
+}
+
+#logo-sun {
+  z-index: 2;
+  background-image: url("logo-olga-dubska-original.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+  left: 50%;
+  right: 50%;
+  bottom: 35%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+
+#hill-left-3 {
+  z-index: 1;
+  background-image: url("hill-left-3.svg");
+  bottom: 25vh;
+}
+
+/* Úvodní sekce s logy O a D a textem uprostřed */
+.intro-banner {
+  background-color: #fffcfc;
+  color: #121212;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.intro-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+  gap: 30px;
+}
+
+.intro-logo {
+  height: 200px;
+  max-width: 220px;
+  flex-shrink: 0;
+}
+
+.intro-text {
+  flex: 1;
+  font-size: 1.8rem;
+  font-weight: normal;
+  text-align: center;
+  transition: opacity 0.6s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+@media (max-width: 768px) {
+  .intro-content {
+    flex-direction: column;
+    gap: 20px;
+    flex-wrap: wrap; /* povoleno zalamování na mobilu */
+  }
+
+  .intro-logo {
+    height: 80px;
+  }
+
+  .intro-text {
+    font-size: 1.4rem;
+  }
+}
+
+/*o mně*/
+.about-section {
+  background-color: #fffcfc;
+  color: #121212;
+  font-size: 1.2rem;
+  padding: 180px 20px;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  margin-bottom: 350px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+  margin-top: 100px;
+}
+
+.about-text h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #121212;
+  line-height: 1.6;
+  margin-bottom: 5px;
+}
+
+.about-text h3 {
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: 40px;
+}
+
+.btn-contact {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  background: linear-gradient(35deg, #c14c74 45%, #f8a052 110%);
+  color: #fffcfc;
+  font-weight: bold;
+  border: none;
+  padding: 16px 32px;
+  font-size: 1.4rem;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  margin-top: 40px;
+}
+
+.btn-contact:hover {
+  background: #121212;
+  color: #fffcfc;
+  transition: 0.4s ease, color 0.4s ease;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    padding: 20px 0;
+  }
+}
+
+/* motto*/
+.motto-section {
+  background-color: #fffcfc;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.motto-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #121212;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    padding: 20px 0;
+  }
+
+  .motto-text {
+    font-size: 2.2rem;
+  }
+}
+
+/* bento box */
+.portfolio-section {
+  background-color: #fffcfc;
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  background-color: #fffcfc;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* obrázek se přizpůsobí boxu a zachová proporce */
+  display: block;
+  border-radius: 12px;
+}
+
+.portfolio-item.large {
+  grid-column: span 1;
+  grid-row: span 3;
+  height: 820px;
+  width: 353px;
+}
+
+.portfolio-item.medium {
+  grid-column: span 1;
+  grid-row: span 2;
+  height: 530px;
+  width: 353px;
+}
+
+.portfolio-item.small {
+  grid-column: span 1;
+  grid-row: span 1;
+  height: 240px;
+  width: 353px;
+}
+
+.portfolio-item-small-4 {
+  grid-column: 1;
+  grid-row: 2 / span 2;
+}
+
+.portfolio-item-small-5 {
+  grid-column: 2;
+  grid-row: span 4;
+}
+
+.portfolio-item-large-6 {
+  grid-column: 3;
+  grid-row: 3 / span 4;
+}
+
+.portfolio-item-medium-7 {
+  grid-column: 1;
+  grid-row: 4 / span 6;
+}
+
+/*.portfolio-item-medium-8 {
+  grid-column: 2;
+  grid-row: 5 / span 6;
+}
+
+.portfolio-item-small-9 {
+  grid-column: 3;
+  grid-row: span 5;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* socials */
+.social-section {
+  background-color: #fffcfc;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.social-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.social-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #121212;
+  margin-bottom: 10px;
+}
+
+.social-subtext {
+  font-size: 1rem;
+  color: #121212;
+  margin-bottom: 30px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.social-icon img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+  transform: scale(1.1);
+}
+
+/* footer */
+.footer-section {
+  background-color: #fffcfc;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.footer-logo {
+  max-width: 160px;
+  width: 100%;
+  height: auto;
+}
+
+.footer-copy {
+  color: #121212;
+  font-size: 0.9rem;
+  margin-top: 70px;
+  padding-bottom: 30px;
+  text-align: center;
+}
