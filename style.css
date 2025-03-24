@@ -339,6 +339,7 @@ html {
   grid-row: span 3;
   height: 820px;
   width: 353px;
+  animation: ease-in-out 7s;
 }
 
 .portfolio-item.medium {

@@ -53,3 +53,16 @@ window.addEventListener("scroll", function () {
 
   lastScrollTop = currentScroll;
 });
+
+
+<!-- PhotoSwipe základní skript -->
+<script type="module">
+  import PhotoSwipeLightbox from '/photoswipe/photoswipe-lightbox.esm.js';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#gallery--getting-started',
+    children: 'a',
+    pswpModule: () => import('/photoswipe/photoswipe.esm.js')
+  });
+  lightbox.init();
+</script>
