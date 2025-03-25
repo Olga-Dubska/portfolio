@@ -1,16 +1,3 @@
-// Jednoduchý parallax efekt na scroll
-/*window.addEventListener("scroll", () => {
-  const scrolled = window.scrollY;
-  const layers = document.querySelectorAll(".parallax-layer");
-
-  layers.forEach((layer, index) => {
-    const depth = (index + 1) * 3; // čím nižší vrstva, tím větší posun
-    const movement = -(scrolled * depth) / 100;
-    layer.style.transform = `translateY(${movement}px)`;
-  });
-});
-*/
-
 // Texty, které se budou střídat
 const phrases = [
   "Tvořím projekty na míru vašim potřebám",
@@ -23,6 +10,7 @@ const phrases = [
 
 let index = 1;
 const textElement = document.querySelector(".intro-text");
+let startRotation = false;
 
 function rotateText() {
   // Změní text s jemným efektem zmizení/zobrazení
@@ -40,6 +28,8 @@ setInterval(rotateText, 2500);
 let lastScrollTop = 0;
 const navbar = document.querySelector(".custom-navbar");
 
+var r = document.querySelector(":root");
+
 window.addEventListener("scroll", function () {
   const currentScroll = window.scrollY;
 
@@ -51,18 +41,69 @@ window.addEventListener("scroll", function () {
     navbar.style.pointerEvents = "auto";
   }
 
+  // animace loga
+  if (currentScroll > 442 * 1) {
+    r.style.setProperty("--logo-opacity", "1");
+  } else {
+    r.style.setProperty("--logo-opacity", "0");
+  }
+
+  if (currentScroll > 702 * 1) {
+    r.style.setProperty("--logo-position", "absolute");
+    r.style.setProperty(
+      "--logo-animation-left",
+      "intro-logo-left-start 0.5s ease-in forwards"
+    );
+    r.style.setProperty(
+      "--logo-animation-right",
+      "intro-logo-right-start 0.5s ease-in forwards"
+    );
+  } else {
+    r.style.setProperty("--logo-position", "fixed");
+    r.style.setProperty(
+      "--logo-animation-left",
+      "intro-logo-left-end 0.2s ease-out forwards"
+    );
+    r.style.setProperty(
+      "--logo-animation-right",
+      "intro-logo-right-end 0.2s ease-out forwards"
+    );
+  }
+
   lastScrollTop = currentScroll;
+
+  let offsetWhite = currentScroll * 0.3;
+
+  r.style.setProperty(
+    "--hill-white-transform",
+    "translate3d(0px, -" + offsetWhite + "px, 0px)"
+  );
+
+  let offsetHillLeft1 = currentScroll * 0.25;
+
+  r.style.setProperty(
+    "--hill-left-1-transform",
+    "translate3d(0px, -" + offsetHillLeft1 + "px, 0px)"
+  );
+
+  let offsetHillRight1 = currentScroll * 0.15;
+
+  r.style.setProperty(
+    "--hill-right-1-transform",
+    "translate3d(0px, -" + offsetHillRight1 + "px, 0px)"
+  );
+
+  let offsetHillLeft2 = currentScroll * 0.1;
+
+  r.style.setProperty(
+    "--hill-left-2-transform",
+    "translate3d(0px, -" + offsetHillLeft2 + "px, 0px)"
+  );
+
+  let offsetHillRight2 = currentScroll * 0.05;
+
+  r.style.setProperty(
+    "--hill-right-2-transform",
+    "translate3d(0px, -" + offsetHillRight2 + "px, 0px)"
+  );
 });
-
-
-<!-- PhotoSwipe základní skript -->
-<script type="module">
-  import PhotoSwipeLightbox from '/photoswipe/photoswipe-lightbox.esm.js';
-
-  const lightbox = new PhotoSwipeLightbox({
-    gallery: '#gallery--getting-started',
-    children: 'a',
-    pswpModule: () => import('/photoswipe/photoswipe.esm.js')
-  });
-  lightbox.init();
-</script>

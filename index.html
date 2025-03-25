@@ -6,7 +6,19 @@
     <title>Portfolio | Olga Dubská</title>
 
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-parallax.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css"
+    />
     <script src="script.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.css"
+      integrity="sha512-LFWtdAXHQuwUGH9cImO9blA3a3GfQNkpF2uRlhaOpSbDevNyK1rmAjs13mtpjvWyi+flP7zYWboqY+8Mkd42xA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <!-- Navigace -->
@@ -42,27 +54,45 @@
     <!-- <script src="script.js"></script> -->
 
     <section class="intro-banner" id="about">
-      <div class="intro-content">
+      <!-- <div class="intro-content">
         <img src="logo-O-dark.svg" alt="Logo O" class="intro-logo" />
         <h2 class="intro-text">Tvořím projekty na míru vašim potřebám</h2>
         <img src="logo-D-dark.svg" alt="Logo D" class="intro-logo" />
       </div>
+    </section> -->
+      <div class="intro-logo-wrapper">
+        <img
+          src="logo-O-dark.svg"
+          alt="Logo O"
+          class="intro-logo"
+          id="intro-logo-left"
+        />
+        <img
+          src="logo-D-dark.svg"
+          alt="Logo D"
+          class="intro-logo"
+          id="intro-logo-right"
+        />
+      </div>
+      <div class="intro-content">
+        <h2 class="intro-text">Tvořím projekty na míru vašim potřebám</h2>
+      </div>
     </section>
 
+    <!-- o mně -->
     <section class="about-section">
       <div class="about-container">
         <div class="about-image">
           <img src="olga_.jpg" alt="Foto designérky" />
         </div>
         <div class="about-text">
-          <h2>Olga Dubská</h2>
+          <h1>Olga Dubská</h1>
           <h3>grafická designérka a UX/UI designérka</h3>
           <p>
             Tvořím funkční designy, které propojují estetiku s praxí. Každý
             projekt je výsledkem spolupráce, naslouchání a zkušeností ze
             skutečných realizací.
           </p>
-          <br /><br />
           <p>
             Jsem grafická designérka s více než 10 lety zkušeností v oblasti
             online i offline grafiky. Zabývám se grafikou od návrhů firemních
@@ -71,62 +101,65 @@
             naplno. Kombinace studia, dlouholeté praxe v reklamní agentuře a v
             e-commerce mi umožňuje navrhovat řešení, která jsou nejen vizuálně
             atraktivní, ale i plně funkční.
-
-            <br /><br />
+          </p>
+          <p>
             Působím v Plzni, kde se věnuji samostatným projektům a zároveň mám
             praxi i s prací v týmu. Pokud vás moje tvorba zaujala, ozvěte se mi,
             ráda vám pomůžu přetvořit vaše nápady ve funkční vizuál.
           </p>
-          <button class="btn-contact">Poslat zprávu</button>
+          <div class="about-bottom">
+            <a href="#contact" class="btn-contact" role="button"
+              >Poslat zprávu</a
+            >
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="motto-section">
+    <section class="motto-section" id="portfolio">
       <h2 class="motto-text">Design it up!</h2>
     </section>
 
     <section class="portfolio-section">
       <div class="portfolio-container">
         <div class="portfolio-grid pswp-gallery" id="gallery--getting-started">
-          <a
-            href="yellow-small.png"
-            data-pswp-width="1200"
-            data-pswp-height="900"
-            class="portfolio-item small"
-            id="1"
-          >
-            <img src="yellow-small.png" alt="Projekt 1" />
-          </a>
-          <div class="portfolio-item large" id="2">
-            <img src="red-large.png" alt="Projekt 2" />
+          <div class="wrap">
+            <section class="bentobox">
+              <article class="bentobox-item item-a">
+                <img src="obr.jpg" alt="projekt" id="imgbento" />
+              </article>
+              <article class="bentobox-item item-b">
+                <img src="obr.jpg" alt="projekt" id="imgbento" />
+              </article>
+              <article class="bentobox-item item-c">
+                <img src="obr.jpg" alt="projekt" id="imgbento" />
+              </article>
+              <article class="bentobox-item item-d">
+                <img src="obr.jpg" alt="projekt" id="imgbento" />
+              </article>
+              <article class="bentobox-item item-e">
+                <img src="obr.jpg" alt="projekt" id="imgbento" />
+              </article>
+              <article class="bentobox-item item-f">
+                <img src="obr.jpg" alt="projekt" id="imgbento" />
+              </article>
+              <article class="bentobox-item item-g">
+                <img src="obr.jpg" alt="projekt" id="imgbento" />
+              </article>
+              <article class="bentobox-item item-h">
+                <img src="obr.jpg" alt="projekt" id="imgbento" />
+              </article>
+              <article class="bentobox-item item-i">
+                <img src="obr.jpg" alt="projekt" id="imgbento" />
+              </article>
+              <article class="bentobox-item item-j">
+                <img src="obr.jpg" alt="projekt" id="imgbento" />
+              </article>
+              <article class="bentobox-item item-k">
+                <img src="obr.jpg" alt="projekt" id="imgbento" />
+              </article>
+            </section>
           </div>
-          <div class="portfolio-item medium" id="3">
-            <img src="violet-medium.png" alt="Projekt 3" />
-          </div>
-          <div class="portfolio-item-small-4">
-            <img src="violet-medium.png" alt="Projekt 4" />
-          </div>
-          <div class="portfolio-item-small-5">
-            <img src="yellow-small.png" alt="Projekt 5" />
-          </div>
-          <div class="portfolio-item-large-6">
-            <img src="violet-medium.png" alt="Projekt 6" />
-          </div>
-          <div class="portfolio-item-medium-7">
-            <img src="red-large.png" alt="Projekt 7" />
-          </div>
-          <!-- <div class="portfolio-item-medium-8">
-            <img src="violet-medium.png" alt="Projekt 8" />
-          </div>
-          <div class="portfolio-item-small-9">
-            <img src="yellow-small.png" alt="Projekt 9" />
-            <div class="portfolio-item-medium-10">
-              <img src="violet-medium.png" alt="Projekt 10" />
-            </div>
-            <div class="portfolio-item-medium-11">
-              <img src="violet-medium.png" alt="Projekt 11" />
-            </div>  -->
         </div>
       </div>
     </section>

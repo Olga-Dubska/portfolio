@@ -9,6 +9,8 @@ body,
 html {
   height: 100%;
   font-family: sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #fffcfc;
   color: #121212;
 }
@@ -66,30 +68,44 @@ html {
   display: flex;
   gap: 3rem;
 }
-
+/**/
 .nav-links a {
   text-decoration: none;
   color: #fffcfc;
   font-size: 1.5rem;
+
+  background: linear-gradient(currentColor 0 0) bottom left/
+    var(--underline-width, 0%) 0.1em no-repeat;
+
+  text-decoration: none;
+
+  display: inline-block;
+  transition: background-size 0.35s;
+
+  padding-bottom: 0.2em;
 }
+/**/
 
 .nav-links a:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  --underline-width: 100%;
 }
 
-/* Parallax sekce */
+/* parallax sekce v separátním souboru pro orientaci */
+
+/*
 .parallax-container {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: #121212; /* černá barva pozadí pod vrstvami */
+  background-color: #121212; 
 }
 
 .parallax-layer {
   position: absolute;
   width: 100%;
-  height: 60vh; /* zmenšeno, aby kopce nebyly tak vysoké */
+  height: 60vh; 
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center bottom;
@@ -150,7 +166,7 @@ html {
   z-index: 1;
   background-image: url("hill-left-3.svg");
   bottom: 25vh;
-}
+} */
 
 /* Úvodní sekce s logy O a D a textem uprostřed */
 .intro-banner {
@@ -170,11 +186,11 @@ html {
   gap: 30px;
 }
 
-.intro-logo {
+/*.intro-logo {
   height: 200px;
   max-width: 220px;
   flex-shrink: 0;
-}
+}*/
 
 .intro-text {
   flex: 1;
@@ -236,25 +252,45 @@ html {
   margin-top: 100px;
 }
 
+.about-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #121212;
+  line-height: 1.6;
+  margin-bottom: 0.1rem;
+}
+
 .about-text h2 {
   font-size: 3rem;
   font-weight: bold;
   color: #121212;
   line-height: 1.6;
-  margin-bottom: 5px;
+  margin-bottom: 0.1rem;
 }
 
 .about-text h3 {
   font-size: 2rem;
   font-weight: normal;
-  margin-bottom: 40px;
+  margin-bottom: 2rem;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+}
+
+.about-bottom {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .btn-contact {
-  display: block;
-  margin-left: auto;
-  margin-right: 0;
-  background: linear-gradient(35deg, #c14c74 45%, #f8a052 110%);
+  display: inline-block;
+  text-decoration: none;
+
+  /* obrázek se posouvá o 500% doprava, při transition */
+  background: linear-gradient(35deg, #c14c74 8.1%, #f8a052 20%, #121212 100%);
+  background-position: 0px 0px;
+  background-size: 500% 62px;
   color: #fffcfc;
   font-weight: bold;
   border: none;
@@ -262,14 +298,14 @@ html {
   font-size: 1.4rem;
   border-radius: 15px;
   cursor: pointer;
-  transition: background-color 0.5s ease;
+  transition: background 0.25s ease-in-out;
   margin-top: 40px;
 }
 
 .btn-contact:hover {
-  background: #121212;
+  /* background: #121212; */
+  background-position: 100% 0px;
   color: #fffcfc;
-  transition: 0.4s ease, color 0.4s ease;
 }
 
 @media (max-width: 768px) {
@@ -324,6 +360,75 @@ html {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 50px;
   background-color: #fffcfc;
+}
+
+.bentobox {
+  display: grid;
+  grid-template-columns: repeat(3, 353px);
+  grid-template-rows: repeat(8, 230px);
+  gap: 50px;
+  grid-template-areas:
+    "a b c"
+    "d b c"
+    "d b e"
+    "g f e"
+    "g h i "
+    "g h k"
+    "m j k"
+    "m j l";
+}
+
+.bentobox-item {
+  background-color: red;
+  border-radius: 50px;
+
+  /* ořezání */
+  overflow: hidden;
+}
+
+.item-a {
+  grid-area: a;
+}
+
+.item-b {
+  grid-area: b;
+}
+
+.item-c {
+  grid-area: c;
+}
+
+.item-d {
+  grid-area: d;
+}
+.item-e {
+  grid-area: e;
+}
+.item-f {
+  grid-area: f;
+}
+.item-g {
+  grid-area: g;
+}
+.item-h {
+  grid-area: h;
+}
+.item-i {
+  grid-area: i;
+}
+.item-j {
+  grid-area: j;
+}
+.item-k {
+  grid-area: k;
+}
+
+.imgbento {
+  width: 100%;
+  height: 100%;
+
+  /* aby dodržoval proporce */
+  object-fit: cover;
 }
 
 .portfolio-item img {
